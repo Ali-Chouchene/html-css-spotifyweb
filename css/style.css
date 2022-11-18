@@ -124,15 +124,27 @@
 
 .main-header {
     height: 100px;
-    background-color: rgba(2, 1, 1, 0.644);
-    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.76);
+    /* opacity: 0.5; */
     position: fixed;
-
-
     left: 11%;
     right: 0;
-
     z-index: 4;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.main-header>button {
+    padding: 10px 15px;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    border: 1px solid white;
+    cursor: pointer;
 }
 
 .main-content {
