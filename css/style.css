@@ -32,18 +32,86 @@
 
 /*LEFT NAVBAR*/
 .left-navbar {
-    width: 250px;
+    width: 300px;
     height: 90vh;
     background-color: rgb(0, 0, 0);
     position: relative;
     z-index: 5;
-    padding: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.left-navbar>img:hover {
+    color: green;
+}
+
+.left-navbar h3 {
+    color: rgb(255, 255, 255);
+}
+
+.left-navbar p {
     color: rgb(105, 105, 105);
+    cursor: pointer;
 }
 
 .left-navbar p:hover {
     color: white;
     font-weight: bold;
+    /* border-left, */
+    border-left: 3px solid green;
+    padding-left: 5px;
+
+}
+
+.left-navbar .user a {
+    text-decoration: none;
+    color: rgb(105, 105, 105);
+    font-size: 14px;
+}
+
+.left-navbar .user .line-white {
+    border: 1px solid white;
+}
+
+.left-navbar>.nav-controls {
+
+    height: 15%;
+    /* margin-top: 2rem;
+    margin-bottom: 2rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left-navbar>.playlist-box {
+
+    height: 50%;
+    /* margin-top: 1rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+}
+
+.left-navbar>.user {
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+    background-color: black;
+}
+
+.left-navbar>.user .admin {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+
 }
 
 /*MAIN*/
