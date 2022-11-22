@@ -54,12 +54,12 @@
     color: rgb(255, 255, 255);
 }
 
-.left-navbar p {
+.left-navbar a {
     color: rgb(105, 105, 105);
     cursor: pointer;
 }
 
-.left-navbar p:hover {
+.left-navbar a:hover {
     color: white;
     font-weight: bold;
     /* border-left, */
@@ -85,17 +85,45 @@
     margin-bottom: 2rem; */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .left-navbar>.playlist-box {
 
-    height: 50%;
+    height: 60%;
     /* margin-top: 1rem; */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-around; */
+}
 
+#playlist {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.playlist-box ul {
+    height: 70%;
+    color: #ffffff;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+}
+
+.playlist-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.playlist-box a {
+    text-decoration: none;
+    color: rgb(105, 105, 105);
 
 }
 
@@ -113,7 +141,7 @@
     font-size: 20px;
     color: white;
     font-weight: bold;
-
+    cursor: pointer;
 }
 
 /***** MAIN *****/
@@ -122,7 +150,7 @@
     width: 100%;
     height: calc(100vh - 100px);
     overflow-y: auto;
-    background-color: #ffffff;
+    background-color: var(--darkblue);
 
 }
 
@@ -165,7 +193,8 @@
     width: 100%;
     z-index: 3;
     margin-top: 1rem;
-    padding: 2rem;
+    padding: 0 2rem;
+
 }
 
 .main-content>.main-navbar {
@@ -177,13 +206,15 @@
 .main-content>.main-navbar ul {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     list-style-type: none;
+
 
 }
 
 .main-navbar a {
     text-decoration: none;
-    color: black;
+    color: rgb(202, 202, 202);
 }
 
 .main-content>.main-navbar a:hover {
@@ -200,19 +231,104 @@
 }
 
 .col {
-    height: 200px;
-    width: 200px;
-    background-color: blue;
-    border: 2px dashed black;
+    /* min-height: 350px; */
+    width: 15%;
+    margin: 2rem 1rem 1rem 0;
+    text-align: center;
 }
 
-.card>img {
-    width: 200px;
-    display: block;
+.col>.card .play-button {
+    height: 100%;
+    width: 100%;
+    background-color: #5f5c5c83;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+    display: none;
+    cursor: pointer;
+    transition: transorm 0.5s;
+
 }
+
+.col>.card.popular .play-button.circle {
+    border-radius: 50%;
+}
+
+.col>.card:hover {
+    background-color: rgb(0, 0, 0);
+    background-size: cover;
+}
+
+.card:hover .play-button {
+    display: flex;
+
+
+}
+
+.played p {
+    color: rgb(202, 202, 202);
+    margin-top: 10px;
+}
+
+.played h1 {
+    color: #ffffff;
+}
+
+.col h3 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.col p {
+    font-size: 14px;
+    color: rgb(202, 202, 202);
+}
+
+.col>.card {
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 250px;
+    position: relative;
+    left: 0;
+    right: 0;
+
+}
+
+.col>.card img {
+    width: 100%;
+    height: 100%;
+}
+
 
 .results {
     text-align: center;
+}
+
+.played p {
+    color: rgb(202, 202, 202);
+    margin-top: 10px;
+}
+
+/***POPULAR***/
+
+.card.popular {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+.card.popular.first {
+    background-image: url(../img/youg.jpeg);
+    background-size: cover;
+}
+
+.card.popular.second {
+    background-image: url(../img/einaudi.jpeg);
+    background-size: cover;
 }
 
 /*FOOTER*/
@@ -379,5 +495,70 @@ footer i:hover {
 
     .top-content {
         display: none;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .main-content>.main-navbar {
+        font-size: 14px;
+        width: 65%;
+        margin: 1rem 0;
+    }
+
+    .col {
+        width: 25%;
+    }
+
+    .card.popular {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .col {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+
+
+    .col {
+        width: 30%;
+    }
+
+    .footer-center {
+        width: 100%;
+
+    }
+
+    .footer-left {
+        display: none;
+    }
+
+    .footer-right {
+        display: none;
+    }
+
+    .card.popular {
+        height: 150px;
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+
+
+    .col {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 710px) {
+
+
+    .col {
+        width: 70%;
     }
 }
